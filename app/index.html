@@ -9,15 +9,29 @@
   <script src="js/controllers.js"></script>
 </head>
 <body ng-controller="PhoneListCtrl">
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar menu -->
+    <div class="col-md-2">
+      Search: <input ng-model="query">
 
-<h2>This is header</h2>
-<ul>
-  <li ng-repeat="phone in phones">
-    <span>{{phone.name}}</span>
-    <span>{{phone.snippet}}</span>
-  </li>
-</ul>
-<p>Total number of phones: {{phones.length}}</p>
+    </div>
+    <!-- /Sidebar menu -->
+
+    <!-- Main menu -->
+    <div class="col-md-10">
+    <ul class="phones">
+      <li ng-repeat="phone in phones | filter:query">
+        {{phone.name}}
+        <p>{{phone.snippet}}</p>
+      </li>
+    </ul>
+      <p>Total number of phones: {{phones.length}}</p>
+    </div>
+    <!-- /Main menu -->
+  </div>
+</div>
+
 
 </body>
 </html>
