@@ -14,6 +14,10 @@
     <!-- Sidebar menu -->
     <div class="col-md-2">
       Search: <input ng-model="query">
+      Sort by:  <select ng-model="orderProperty">
+                  <option value="name">Alphabetical</option>
+                  <option value="age">Newest</option>
+                </select>
 
     </div>
     <!-- /Sidebar menu -->
@@ -21,7 +25,7 @@
     <!-- Main menu -->
     <div class="col-md-10">
     <ul class="phones">
-      <li ng-repeat="phone in phones | filter:query">
+      <li ng-repeat="phone in phones | filter:query | orderBy:orderProperty">
         {{phone.name}}
         <p>{{phone.snippet}}</p>
       </li>
