@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <div class="row">
+
+        <!-- Sidebar menu -->
+        <div class="col-md-2">
+            Search: <input type="search" ng-model="query">
+            Sort by:
+            <select ng-model="orderProperty">
+                <option value="name">Alphabetical</option>
+                <option value="age">Newest</option>
+            </select>
+
+        </div>
+        <!-- /Sidebar menu -->
+
+        <!-- Main menu -->
+        <div class="col-md-10">
+            <ul class="phones">
+                <li ng-repeat="phone in phones | filter:query | orderBy:orderProperty" class="thumbnail">
+                    <a href="#/phones/{{phones.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}"></a>
+                    <a href="#/phones/{{phones.id}}">{{phone.name}}</a>
+                    <p>{{phone.snippet}}</p>
+                </li>
+            </ul>
+            <pre>Total number of phones: {{phones.length }}</pre>
+        </div>
+        <!-- /Main menu -->
+
+    </div>
+</div>
