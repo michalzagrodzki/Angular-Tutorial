@@ -13,7 +13,7 @@
   <div class="row">
     <!-- Sidebar menu -->
     <div class="col-md-2">
-      Search: <input ng-model="query">
+      Search: <input type="search" ng-model="query">
       Sort by:  <select ng-model="orderProperty">
                   <option value="name">Alphabetical</option>
                   <option value="age">Newest</option>
@@ -30,7 +30,7 @@
         <p>{{phone.snippet}}</p>
       </li>
     </ul>
-      <p>Total number of phones: {{phones.length}}</p>
+      <pre>Total number of phones: {{phones.length }}</pre>
     </div>
     <!-- /Main menu -->
   </div>
