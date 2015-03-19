@@ -1,4 +1,4 @@
-<img ng-src="{{phone.image[0]}}" class="phone">
+<img ng-src="{{mainImageUrl}}" class="phone">
 
 <h1>{{phone.name}}</h1>
 
@@ -31,4 +31,11 @@
                 <dt>GPS</dt>
                 <dd>{{phone.connectivity.gps | checkmark}}</dd>
             </dl>
+        </ul>
+
+        <ul>
+            <li ng-repeat="img in phone.images">
+                <img ng-src="{{img}}" ng-click="setImage(img)">
+            </li>
+
         </ul>
