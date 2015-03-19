@@ -16,8 +16,10 @@ phonecatControllers.controller('PhoneListCtrl',
 
 // controller for listing items - sends data to View from JSON file
 phonecatControllers.controller('PhoneDetailCtrl',
-    [ '$scope', '$routeParams',
-        function($scope, $routeParams) {
-            $scope.phoneId = $routeParams.phoneId;
+    [ '$scope', '$routeParams', '$http',
+        function($scope, $routeParams, $http) {
+            $http.get('/phones' + $routeParams.phoneId + '.json').success(function(data){
+                $scope.phone = data;
+            });
         }
     ]);
