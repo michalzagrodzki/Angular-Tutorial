@@ -5,7 +5,8 @@
 // initialization of modules
 var phonecatApp = angular.module('phonecatApp', [
     'ngRoute',
-    'phonecatControllers'
+    'phonecatControllers',
+    'phonecatFilters'
 ]);
 
 // configuration of routes
