@@ -2,11 +2,11 @@
 
 <h1>{{phone.name}}</h1>
 
-        <p>{{phone.description}}</p>
+<p>{{phone.description}}</p>
 
         <ul class="phone-thumbs">
             <li ng-repeat="img in phone.images">
-                <img ng-src="{{img}}">
+                <img ng-src="{{img}}" ng-click="setImage(img)">
             </li>
         </ul>
 
@@ -15,9 +15,16 @@
                 <span>Availability and Networks</span>
                 <dl>
                     <dt>Availability</dt>
-                    <dd ng-repeat="availability in phone.availability">
-                        {{availability}}
-                    </dd>
+                    <dd ng-repeat="availability in phone.availability">{{availability}}</dd>
+                </dl>
+            </li>
+            <li>
+                <span>Storage and Memory</span>
+                <dl>
+                    <dt>Infrared</dt>
+                    <dd>{{phone.connectivity.infrared | checkmark}}</dd>
+                    <dt>GPS</dt>
+                    <dd>{{phone.connectivity.gps | checkmark}}</dd>
                 </dl>
             </li>
 
@@ -25,17 +32,5 @@
                 <span>Additional Features</span>
                 <dd>{{phone.additionalFeatures}}</dd>
             </li>
-            <dl>
-                <dt>Infrared</dt>
-                <dd>{{phone.connectivity.infrared | checkmark}}</dd>
-                <dt>GPS</dt>
-                <dd>{{phone.connectivity.gps | checkmark}}</dd>
-            </dl>
         </ul>
 
-        <ul>
-            <li ng-repeat="img in phone.images">
-                <img ng-src="{{img}}" ng-click="setImage(img)">
-            </li>
-
-        </ul>
